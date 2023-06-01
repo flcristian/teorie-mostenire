@@ -13,17 +13,12 @@ namespace teorie.vehicle
         private string _make;
         private string _model;
         private string _color;
+        private string _type;
 
         // Constructori
         public Vehicle()
         { 
             Console.WriteLine("Eu sunt constructorul din baza fara parametrii");         
-        }
-
-        public Vehicle(string make)
-        {
-            Console.WriteLine("Eu sunt constructorul din baza care are un singur parametru.");
-            _make = make;
         }
 
         public Vehicle(int id, int year)
@@ -48,6 +43,21 @@ namespace teorie.vehicle
             _make = make;
             _model = model;
             _color = color;
+        }
+
+        public Vehicle(string text)
+        {
+            string[] data = text.Split('|');
+            
+
+            _type = data[0];
+            _id = Int32.Parse(data[1]);
+            _year = Int32.Parse(data[2]);
+            _make = data[3];
+            _model = data[4];
+            _color = data[5];
+
+            
         }
 
         // Accesori
@@ -94,6 +104,15 @@ namespace teorie.vehicle
             set
             {
                 _color = value;
+            }
+        }
+
+        public string Type
+        {
+            get { return _type; }
+            set
+            {
+                _type = value;
             }
         }
 

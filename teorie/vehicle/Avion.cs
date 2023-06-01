@@ -25,6 +25,15 @@ namespace teorie.vehicle
             Category = category;
         }
 
+        public Avion(string text) : base(text)
+        {
+            string[] data = text.Split('|');
+
+            _weight = Int32.Parse(data[6]);
+            _maxWeight = Int32.Parse(data[7]);
+            _category = data[8];
+        }
+
         // Cuvantul cheie base 
         // ->accesam fieldurile din baza
         // ->accesam constrcutorul bazei
@@ -60,7 +69,7 @@ namespace teorie.vehicle
 
         // Metode
 
-        public string Description()
+        public string AvionDescription()
         {
             string desc = base.Description();
 

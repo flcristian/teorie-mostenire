@@ -20,6 +20,15 @@ namespace teorie.vehicle
             _category = category;
             _registrationCountry = registrationCountry;
         }
+        public Barca(string text) : base(text)
+        {
+            string[] data = text.Split('|');
+
+            _weight = Int32.Parse(data[6]);
+            _category = data[7];
+            _registrationCountry = data[8];
+        }
+
 
         // Accesori
 
@@ -52,7 +61,7 @@ namespace teorie.vehicle
 
         // Metode
 
-        public string Description()
+        public string BarcaDescription()
         {
             string desc = base.Description();
 
