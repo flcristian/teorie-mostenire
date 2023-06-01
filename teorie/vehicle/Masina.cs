@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace teorie.vehicle
 {
@@ -20,6 +24,16 @@ namespace teorie.vehicle
             _transmission = transmission;
             _drivetrain = drivetrain;
         }
+
+        public Masina(string text) : base(text)
+        {
+            string[] data = text.Split('|');
+
+            _horsepower = Int32.Parse(data[6]);
+            _transmission = data[7];
+            _drivetrain = data[8];
+        }
+
 
         // Accesori
 
@@ -52,7 +66,7 @@ namespace teorie.vehicle
 
         // Metode
 
-        public string Description()
+        public string MasinaDescription()
         {
             string desc = base.Description();
 
