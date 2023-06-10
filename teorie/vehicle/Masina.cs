@@ -27,7 +27,7 @@ namespace teorie.vehicle
 
         public Masina(string text) : base(text)
         {
-            string[] data = text.Split('|');
+            string[] data = text.Split('/');
 
             _horsepower = Int32.Parse(data[6]);
             _transmission = data[7];
@@ -66,15 +66,22 @@ namespace teorie.vehicle
 
         // Metode
 
-        public string MasinaDescription()
+        public override string ToString()
         {
-            string desc = base.Description();
+            string desc = base.ToString();
 
             desc += "Horsepower : " + _horsepower + "\n";
             desc += "Transmission : " + _transmission + "\n";
             desc += "Drivetrain : " + _drivetrain + "\n";
 
             return desc;
+        }
+
+        public override string ToSave()
+        {
+            string save = $"{base.ToSave()}/{_horsepower}/{_transmission}/{_drivetrain}";
+
+            return save;
         }
     }
 }

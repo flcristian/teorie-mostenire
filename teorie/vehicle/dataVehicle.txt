@@ -1,5 +1,5 @@
-﻿Masina|1|2008|Nissan|Silvia S14|Black|214|Manual|RWD
-Masina|2|2014|Subaru|WRX STI|White|168|Manual|AWD
-Avion|3|2000|Ikarus|C42|White|265|450|Ultra Light
-Barca|4|2008|Source|22|Grey|1400|Speed Boat|Albania
-Masina|2|2015|Subaru|WRX STI|Blue|234|Manual|AWD
+Masina/1/2008/Nissan/Silvia S14/Black/214/Manual/RWD
+Masina/2/2014/Subaru/WRX STI/White/168/Manual/AWD
+Avion/3/2000/Ikarus/C42/White/265/450/Ultra Light
+Barca/4/2008/Source/22/Grey/1400/Speed Boat/Albania
+Masina/2/2015/Subaru/WRX STI/Blue/234/Manual/AWD

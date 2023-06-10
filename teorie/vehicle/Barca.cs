@@ -20,9 +20,10 @@ namespace teorie.vehicle
             _category = category;
             _registrationCountry = registrationCountry;
         }
+
         public Barca(string text) : base(text)
         {
-            string[] data = text.Split('|');
+            string[] data = text.Split('/');
 
             _weight = Int32.Parse(data[6]);
             _category = data[7];
@@ -61,15 +62,22 @@ namespace teorie.vehicle
 
         // Metode
 
-        public string BarcaDescription()
+        public override string ToString()
         {
-            string desc = base.Description();
+            string desc = base.ToString();
 
             desc += "Weight : " + _weight + "\n";
             desc += "Category : " + _category + "\n";
             desc += "Registration Country : " + _registrationCountry + "\n";
 
             return desc;
+        }
+
+        public override string ToSave()
+        {
+            string save = $"{base.ToSave()}/{_weight}/{_category}/{_registrationCountry}";
+
+            return save;
         }
     }
 }

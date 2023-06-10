@@ -43,7 +43,7 @@ namespace teorie.product
             while (!sr.EndOfStream)
             {
                 string text = sr.ReadLine();
-                string type = text.Split('|')[0];
+                string type = text.Split('/')[0];
 
                 switch (type)
                 {
@@ -60,6 +60,33 @@ namespace teorie.product
                 }
             }
             sr.Close();
+        }
+
+        public void SaveList()
+        {
+            StreamWriter sw = new StreamWriter("D:\\mycode\\csharp\\mostenirea\\teorie\\teorie\\product\\dataProduct.txt");
+            string toSave = "";
+
+            foreach (Product product in _list)
+            {
+                string type = product.Type;
+
+                switch (type)
+                {
+                    case "Medicine":
+                        Medicine medicine = product as Medicine;
+                        toSave += medicine.ToSaveMedicine() + "\n";
+                        break;
+                    case "FoodItem":
+                        FoodItem foodItem = product as FoodItem;
+                        toSave += foodItem.ToSaveFoodItem() + "\n";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            sw.Write(toSave);
+            sw.Close();
         }
 
         public void Afisare()

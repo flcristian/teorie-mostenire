@@ -45,7 +45,7 @@ namespace teorie.vehicle
             while (!sr.EndOfStream)
             {
                 string text = sr.ReadLine();
-                string type = text.Split('|')[0];
+                string type = text.Split('/')[0];
 
                 switch (type)
                 {
@@ -68,31 +68,25 @@ namespace teorie.vehicle
             sr.Close();
         }
 
+        public void SaveList()
+        {
+            StreamWriter sw = new StreamWriter("D:\\mycode\\csharp\\mostenirea\\teorie\\teorie\\vehicle\\dataVehicle.txt");
+
+            string toSave = "";
+            foreach(Vehicle vehicle in _list)
+            {
+                toSave += vehicle.ToSave() + "\n";
+            }
+            sw.Write(toSave);
+
+            sw.Close();
+        }
+
         public void Afisare()
         {
             foreach(Vehicle vehicle in _list)
             {
-                string desc = "";
-
-                switch (vehicle.Type)
-                {
-                    case "Masina":
-                        Masina masina = vehicle as Masina;
-                        desc = masina.MasinaDescription();
-                        break;
-                    case "Avion":
-                        Avion avion = vehicle as Avion;
-                        desc = avion.AvionDescription();
-                        break;
-                    case "Barca":
-                        Barca barca = vehicle as Barca;
-                        desc = barca.BarcaDescription();
-                        break;
-                    default:
-                        break;
-                }
-
-                Console.WriteLine(desc);
+                Console.WriteLine(vehicle);
             }
         }
     }

@@ -29,7 +29,7 @@ namespace teorie.product
 
         public Product(string text)
         {
-            string[] data = text.Split('|');
+            string[] data = text.Split('/');
 
             _type = data[0];
             _id = Int32.Parse(data[1]);

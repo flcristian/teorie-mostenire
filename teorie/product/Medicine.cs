@@ -23,7 +23,7 @@ namespace teorie.product
 
         public Medicine(string text) : base(text)
         {
-            string[] data = text.Split('|');
+            string[] data = text.Split('/');
 
             _quantity = Int32.Parse(data[6]);
             _dosage = Int32.Parse(data[7]);
@@ -70,6 +70,13 @@ namespace teorie.product
             desc += $"Minimum Age : {_minimumAge}\n";
 
             return desc;
+        }
+
+        public string ToSaveMedicine()
+        {
+            string save = $"{base.Type}/{base.Id}/{base.Price}/{base.Name}/{base.Category}/{base.Information}/{_quantity}/{_dosage}/{_minimumAge}";
+
+            return save;
         }
     }
 }
