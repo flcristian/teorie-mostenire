@@ -23,7 +23,7 @@ namespace teorie.product
 
         public FoodItem(string text) : base(text)
         {
-            string[] data = text.Split('|');
+            string[] data = text.Split('/');
 
             _weight = Int32.Parse(data[6]);
             _expiryDate = data[7];
@@ -70,6 +70,13 @@ namespace teorie.product
             desc += $"Manufacturer : {_manufacturer}\n";
 
             return desc;
+        }
+
+        public string ToSaveFoodItem()
+        {
+            string save = $"{base.Type}/{base.Id}/{base.Price}/{base.Name}/{base.Category}/{base.Information}/{_weight}/{_expiryDate}/{_manufacturer}";
+
+            return save;
         }
     }
 }

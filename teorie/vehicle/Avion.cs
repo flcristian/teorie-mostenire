@@ -27,7 +27,7 @@ namespace teorie.vehicle
 
         public Avion(string text) : base(text)
         {
-            string[] data = text.Split('|');
+            string[] data = text.Split('/');
 
             _weight = Int32.Parse(data[6]);
             _maxWeight = Int32.Parse(data[7]);
@@ -69,15 +69,22 @@ namespace teorie.vehicle
 
         // Metode
 
-        public string AvionDescription()
+        public override string ToString()
         {
-            string desc = base.Description();
+            string desc = base.ToString();
 
             desc += "Weight : " + _weight + "\n";
             desc += "MaxWeight : " + _maxWeight + "\n";
             desc += "Category : " + _category + "\n";
 
             return desc;
+        }
+
+        public override string ToSave()
+        {
+            string save = $"{base.ToSave()}/{_weight}/{_maxWeight}/{_category}";
+
+            return save;
         }
     }
 }

@@ -63,7 +63,13 @@ internal class Program
         service.Afisare();*/
 
         ProductService service = new ProductService();
+        service.SaveList();
 
         service.Afisare();
+
+        VehicleService vehicleService = new VehicleService();
+        vehicleService.SaveList();
+
+        vehicleService.Afisare();
     }
 }

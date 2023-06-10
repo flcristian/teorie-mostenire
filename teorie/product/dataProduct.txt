@@ -1,5 +1,5 @@
-﻿Medicine|1|14.99|Nurofen|Pill|information (some text)|10|2|14
-FoodItem|2|1.99|Lettuce|Vegetable|information (some text)|1000|04.10.2023|Lettuce Farm
-FoodItem|3|0.99|Potato|Vegetable|information (some text)|1000|23.11.2023|Potato Farm
-Medicine|4|22.49|Cough Syroup|Syroup|information (some text)|1|4|4
-FoodItem|5|4.99|Tuna|Can|information (some text)|200|10.10.2024|Tuna Manufacturer
+Medicine/1/14.99/Nurofen/Pill/information (some text)/10/2/14
+FoodItem/2/1.99/Lettuce/Vegetable/information (some text)/1000/04.10.2023/Lettuce Farm
+FoodItem/3/0.99/Potato/Vegetable/information (some text)/1000/23.11.2023/Potato Farm
+Medicine/4/22.49/Cough Syroup/Syroup/information (some text)/1/4/4
+FoodItem/5/4.99/Tuna/Can/information (some text)/200/10.10.2024/Tuna Manufacturer

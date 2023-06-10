@@ -47,7 +47,7 @@ namespace teorie.vehicle
 
         public Vehicle(string text)
         {
-            string[] data = text.Split('|');
+            string[] data = text.Split('/');
             
 
             _type = data[0];
@@ -118,7 +118,7 @@ namespace teorie.vehicle
 
         // Metode
 
-        public string Description()
+        public override string ToString()
         {
             string desc = "";
 
@@ -129,6 +129,13 @@ namespace teorie.vehicle
             desc += "Color : " + _color + "\n";
 
             return desc;
+        }
+
+        public virtual string ToSave()
+        {
+            string save = $"{_type}/{_id}/{_year}/{_make}/{_model}/{_color}";
+
+            return save;
         }
     }
 }
